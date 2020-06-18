@@ -28,7 +28,7 @@ from rtslib_fb import RTSRoot
 import os
 import sys
 
-default_save_file = "/etc/target/saveconfig.json"
+default_save_file = "/etc/rtslib-fb-target/saveconfig.json"
 err = sys.stderr
 
 def usage():

@@ -34,7 +34,7 @@ from .utils import dict_remove, set_attributes
 from .utils import fread, fwrite
 from .alua import ALUATargetPortGroup
 
-default_save_file = "/etc/target/saveconfig.json"
+default_save_file = "/etc/rtslib-fb-target/saveconfig.json"
 
 class RTSRoot(CFSNode):
     '''
@@ -65,7 +65,7 @@ class RTSRoot(CFSNode):
     # this should match the kernel target driver default db dir
     _default_dbroot = "/var/target"
     # this is where the target DB is to be located (instead of the default)
-    _preferred_dbroot = "/etc/target"
+    _preferred_dbroot = "/etc/rtslib-fb-target"
 
     def __init__(self):
         '''
@@ -449,7 +449,7 @@ class RTSRoot(CFSNode):
     def save_to_file(self, save_file=None, so_path=None):
         '''
         Write the configuration in json format to a file.
-        Save file defaults to '/etc/target/saveconfig.json'.
+        Save file defaults to '/etc/rtslib-fb-target/saveconfig.json'.
         '''
         if not save_file:
             save_file = default_save_file
@@ -495,7 +495,7 @@ class RTSRoot(CFSNode):
                           abort_on_error=False):
         '''
         Restore the configuration from a file in json format.
-        Restore file defaults to '/etc/target/saveconfig.json'.
+        Restore file defaults to '/etc/rtslib-fb-target/saveconfig.json'.
         Returns a list of non-fatal errors. If abort_on_error is set,
           it will raise the exception instead of continuing.
         '''

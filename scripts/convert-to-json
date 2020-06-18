@@ -316,7 +316,7 @@ def parse(txt, cur):
         elif txt[cur] == "fabric":
             cur = parse_fabric(txt, cur)
 
-with open("/etc/target/scsi_target.lio") as f:
+with open("/etc/rtslib-fb-target/scsi_target.lio") as f:
     txt = f.read()
     txt = split(txt)
     cur = parse(txt, 0)
